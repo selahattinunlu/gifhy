@@ -1,0 +1,16 @@
+.gifBox {
+  position: relative;
+  background-color: #2c2d46;
+  border-radius: .5rem;
+
+  .textWrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(18, 18, 18, 0.6));
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+}
