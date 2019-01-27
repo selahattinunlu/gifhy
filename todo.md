@@ -2,3 +2,4 @@
 - add loading into home page
 - add search
 - add detail page
+- fix dates (make it like "2hr ago")
