@@ -1,4 +1,4 @@
-- aadd load more button into home page
+- add load more button into home page
 - add loading into home page
 - add search
 - add detail page
