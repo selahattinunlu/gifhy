@@ -113,7 +113,13 @@ button {
     }
   }
 
+  main {
+    padding-bottom: 3rem;
+  }
+
   .masonry-wrapper {
+    margin-bottom: 3rem;
+
     > div {
       margin-bottom: 1rem;
     }
@@ -125,6 +131,7 @@ button {
   }
 }
 
+// for desktop
 @media (min-width: 1200px) {
   .layout-wrapper {
     > header {

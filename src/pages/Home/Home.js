@@ -3,16 +3,18 @@ import { getTrends } from '../../actions/trends';
 import { connect } from 'react-redux';
 
 import GifBox from '../../components/GifBox/GifBox';
+import Button from '../../components/Button/Button';
 
 class Home extends Component {
-  componentDidMount() {
-    this.props.getTrends();
+  async componentDidMount() {
+    await this.props.getTrends();
   }
 
   renderTrends() {
     return this.props.trends.data.map(trend => {
       return (
         <GifBox
+          key={trend.id}
           url={trend.images.original.url}
           imageWidth={trend.images.original.width}
           imageHeight={trend.images.original.height}
@@ -21,6 +23,12 @@ class Home extends Component {
         />
       )
     });
+  }
+
+  async loadMore() {
+    console.log('clicked load more!');
+    const newOffset = this.props.trends.offset + 25;
+    await this.props.getTrends(newOffset);
   }
 
   render() {
@@ -58,6 +66,10 @@ class Home extends Component {
           <div className="masonry-wrapper">
             {this.renderTrends()}
           </div>
+          <Button
+            text="Load more"
+            onClick={this.loadMore.bind(this)}
+            disabled={this.props.trends.loading}/>
         </main>
         <footer></footer>
       </div>
