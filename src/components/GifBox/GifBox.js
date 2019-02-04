@@ -1,6 +1,7 @@
 import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import classes from './GifBox.module.scss';
+import { dateFormat } from '../../lib/helper';
 
 export default class GifBox extends Component {
   constructor(props) {
@@ -47,7 +48,7 @@ export default class GifBox extends Component {
         <img src={''} alt="" ref={this.imageRef} />
         <div className={classes.textWrapper}>
           <div>{this.props.title}</div>
-          <div>{this.props.trendingDate}</div>
+          <div>{dateFormat(this.props.trendingDate)}</div>
         </div>
       </div>
     );
